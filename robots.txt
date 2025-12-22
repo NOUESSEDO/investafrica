@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /invest.html
+Allow: /conseil.html
+Allow: /index.html
+Allow: /crypto.html
+Allow: /bourse.html
+Allow: /legal.html
+
+# Bloquer les pages de brouillon si elles existent
+Disallow: /private/
+
+# Emplacement du Sitemap
+Sitemap: https://nouessedo.github.io/investafrica/sitemap.xml
