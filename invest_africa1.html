@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestAfrica | Conseils & Stratégies Crypto Bourse</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'crypto-blue': '#4F46E5',
+                        'invest-green': '#10B981',
+                        'market-orange': '#F59E0B',
+                        'premium-dark': '#0f172a',
+                        'card-bg': 'rgba(30, 41, 59, 0.7)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            /* Retour au dégradé original pour la finance */
+            background-image: linear-gradient(to right, #4F46E5, #ec4899, #F59E0B); 
+        }
+        .tip-card {
+            border-left: 4px solid #F59E0B;
+            background: linear-gradient(90deg, rgba(245, 158, 11, 0.1) 0%, rgba(0,0,0,0) 100%);
+        }
+        /* Animation Ticker */
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .ticker-wrap { overflow: hidden; white-space: nowrap; }
+        .ticker-content { display: inline-block; animation: scroll 40s linear infinite; }
+    </style>
+    <!-- AOS Script Load -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body class="bg-premium-dark text-white overflow-x-hidden font-sans">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 glass-panel transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="bourse.html" class="text-2xl font-bold tracking-tighter">
+                    Invest<span class="text-invest-green">Africa</span><span class="text-market-orange">.</span>
+                </a>
+                <!-- Liens inchangés -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="conseil.html" class="text-market-orange font-bold hover:text-yellow-300 transition">💡 Conseils</a>
+                    <a href="crypto.html" class="hover:text-crypto-blue transition">Crypto</a>
+                    <a href="invest.html" class="hover:text-invest-green transition">Investissement</a>
+                    <a href="bourse.html" class="hover:text-purple-400 transition">Bourse</a>
+                </div>
+            </div>
+            <!-- Cette section force l'affichage des onglets sur mobile avec un défilement horizontal si besoin -->
+            <div class="md:hidden overflow-x-auto no-scrollbar py-3 flex space-x-6 text-sm font-medium border-t border-white/5">
+                <a href="conseil.html" class="text-market-orange whitespace-nowrap">💡 Conseils</a>
+                <a href="crypto.html" class="text-gray-300 hover:text-white whitespace-nowrap">Crypto</a>
+                <a href="invest.html" class="text-gray-300 hover:text-white whitespace-nowrap">Investissement</a>
+                <a href="bourse.html" class="text-gray-300 hover:text-white whitespace-nowrap">Bourse</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-32">
+        <!-- Background Effects -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[120px] opacity-20"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-invest-green rounded-full mix-blend-multiply filter blur-[120px] opacity-10"></div>
+
+        <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-12 relative z-10">
+            <div class="w-full md:w-1/2 text-center md:text-left" data-aos="fade-right">
+                <span class="text-invest-green font-bold tracking-wide uppercase text-sm mb-2 block">🎓 Expertise Crypto et Actions Africaines & Internationales</span>
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+                    Optimisez votre capital, <br>
+                    <span class="gradient-text">Devenez l'investisseur.</span>
+                </h1>
+                <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                    Découvrez les stratégies concrètes pour débuter et performer en <strong>Crypto</strong> et en <strong>Bourse</strong> (actions d'entreprises) avec un focus sur les marchés émergents.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="conseil.html" class="bg-market-orange text-black font-bold py-3 px-8 rounded-full hover:bg-yellow-400 transition shadow-lg shadow-orange-500/20">
+                        Voir les Stratégies
+                    </a>
+                    <a href="https://youtu.be/M-KMPhYlsW4?si=YoBV9m_Sa_tX0EpW" class="glass-panel text-white font-bold py-3 px-8 rounded-full hover:bg-white/10 transition">
+                        Tutoriels Vidéo
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Hero Image: Remplacé par une image de marché financier -->
+            <div class="w-full md:w-1/2" data-aos="zoom-in">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-indigo-900/40">
+                    <img src="https://images.unsplash.com/photo-1549416556-91ce346d0a7a?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         alt="Tableau de bord financier montrant des graphiques de cryptomonnaies et d'actions."
+                         class="w-full h-auto object-cover transform transition duration-500 hover:scale-105"
+                         onerror="this.onerror=null; this.src='trading.jpg'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-premium-dark/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-white text-2xl font-bold">Maîtrisez les Marchés.</h3>
+                        <p class="text-sm text-gray-300">Analyse, Stratégie, Performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CONSEILS & STRATÉGIES (EXISTANTE) -->
+    <section id="conseils" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">💡 Conseils de l'Expert</h2>
+                <p class="text-gray-400">Les règles d'or pour investir en toute sécurité.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Conseil 1 -->
+                <div class="bg-card-bg p-6 rounded-xl border border-gray-700 hover:border-market-orange transition group" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-market-orange/20 rounded-full flex items-center justify-center text-market-orange mb-4 group-hover:bg-market-orange group-hover:text-black transition">
+                        <i class="fas fa-shield-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">La Règle du Capital</h3>
+                    <p class="text-gray-300 text-sm mb-4">
+                        N'investissez <strong>jamais</strong> plus que ce que vous êtes prêt à perdre. Commencez petit et augmentez progressivement votre exposition au risque.
+                    </p>
+                    <div class="tip-card p-3 rounded text-xs text-orange-200">
+                        <i class="fas fa-exclamation-circle mr-1"></i> Astuce : Définissez un budget "risqué" (10% max de l'épargne).
+                    </div>
+                </div>
+
+                <!-- Conseil 2 -->
+                <div class="bg-card-bg p-6 rounded-xl border border-gray-700 hover:border-invest-green transition group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-invest-green/20 rounded-full flex items-center justify-center text-invest-green mb-4 group-hover:bg-invest-green group-hover:text-black transition">
+                        <i class="fas fa-layer-group text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Ne mettez pas tous vos œufs</h3>
+                    <p class="text-gray-300 text-sm mb-4">
+                        La <strong>diversification</strong> est votre seule protection gratuite. Ne misez pas tout sur une seule crypto ou une seule action.
+                    </p>
+                    <ul class="text-xs text-gray-400 space-y-1 list-disc list-inside">
+                        <li>Actions Stables (50%)</li>
+                        <li>Cryptos (30%)</li>
+                        <li>Marchés émergents (20%)</li>
+                    </ul>
+                </div>
+
+                <!-- Conseil 3 -->
+                <div class="bg-card-bg p-6 rounded-xl border border-gray-700 hover:border-crypto-blue transition group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-crypto-blue/20 rounded-full flex items-center justify-center text-crypto-blue mb-4 group-hover:bg-crypto-blue group-hover:text-white transition">
+                        <i class="fas fa-history text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Stratégie DCA (Lissage)</h3>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Au lieu d'investir 100.000F d'un coup, investissez 10.000F chaque semaine. Cela lisse votre prix d'achat et réduit le risque de "mauvais timing".
+                    </p>
+                    <div class="bg-gray-800 p-2 rounded text-center">
+                        <span class="text-xs font-mono text-green-400">Régularité > Timing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CRYPTO AVEC GUIDE (EXISTANTE) -->
+    <section id="crypto" class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                
+                <!-- Colonne Gauche : Données & Chart -->
+                <div class="lg:w-2/3">
+                    <h2 class="text-3xl font-bold mb-6 flex items-center">
+                        <i class="fab fa-bitcoin text-crypto-blue mr-3"></i> Analyse Crypto
+                    </h2>
+                    <div class="glass-panel p-6 rounded-2xl mb-8">
+                        <!-- Le Chart reste le même -->
+                        <canvas id="cryptoChart" height="200"></canvas>
+                    </div>
+                    
+                    <!-- Articles Éducatifs -->
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-yellow-500">
+                            <h4 class="font-bold mb-2">Comment sécuriser son Wallet ?</h4>
+                            <p class="text-xs text-gray-400 mb-2">Notez votre "Seed Phrase" de 12 mots sur PAPIER uniquement. Jamais de capture d'écran, jamais dans vos notes de téléphone.</p>
+                            <a href="https://books.google.bj/books?id=ZKD2EAAAQBAJ&pg=PT11&dq=livre+comment+securiser+son+wallet&hl=fr&newbks=1&newbks_redir=0&source=gb_mobile_search&sa=X&ved=2ahUKEwjt4aKoxcSRAxU9V0EAHUbOHMoQ6AF6BAgNEAM#v=onepage&q=livre%20comment%20securiser%20son%20wallet&f=false" class="text-yellow-500 text-xs font-bold hover:underline">Lire le guide complet →</a>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-bold mb-2">Bitcoin vs Altcoins</h4>
+                            <p class="text-xs text-gray-400 mb-2">Bitcoin est l'or numérique (réserve de valeur). Les Altcoins (Ethereum, Solana) sont comme des startups technologiques (plus risqués, plus de potentiel).</p>
+                            <a href="Bitcoin.pdf" class="text-blue-500 text-xs font-bold hover:underline">Comprendre les différences →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne Droite : Sidebar Conseils (EXISTANTE) -->
+                <div class="lg:w-1/3">
+                    <div class="bg-gradient-to-b from-indigo-900 to-gray-900 p-6 rounded-2xl border border-indigo-700/50 sticky top-24">
+                        <h3 class="text-xl font-bold mb-4 text-white border-b border-indigo-700 pb-2">🚨 Alertes & Astuces</h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Image Placeholder pour illustrer les alertes -->
+                            <img src="https://images.unsplash.com/photo-1621503930491-c67d1d2b8618?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                                alt="Illustration de la volatilité des marchés financiers." 
+                                class="rounded-lg mb-4 w-full"
+                                onerror="this.onerror=null; this.src='investissement.jpg'">
+                            
+                            <!-- Alerte Scam -->
+                            <div class="flex gap-3">
+                                <i class="fas fa-exclamation-triangle text-red-500 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-red-400 text-sm">Attention aux Arnaques</h4>
+                                    <p class="text-xs text-gray-300">Si quelqu'un vous promet des rendements irréalistes (5% par jour), c'est une arnaque. Ne partagez jamais vos clés privées.</p>
+                                </div>
+                            </div>
+
+                            <!-- Astuce Fees -->
+                            <div class="flex gap-3">
+                                <i class="fas fa-gas-pump text-green-400 mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-green-400 text-sm">Réduire les frais</h4>
+                                    <p class="text-xs text-gray-300">Utilisez le réseau <strong>TRC20</strong> ou <strong>BEP20</strong> pour vos transferts USDT pour optimiser vos coûts.</p>
+                                </div>
+                            </div>
+
+                            <!-- Top Pick -->
+                            <div class="bg-indigo-800/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-white text-sm mb-2">Top 3 Portefeuille Débutant</h4>
+                                <div class="flex justify-between text-xs text-gray-300 border-b border-gray-600 py-1">
+                                    <span>Bitcoin (BTC)</span> <span>60%</span>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-300 border-b border-gray-600 py-1">
+                                    <span>Ethereum (ETH)</span> <span>30%</span>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-300 py-1">
+                                    <span>Altcoins Risqués</span> <span>10%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION BOURSE & ENTREPRISES -->
+    <section id="bourse" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-10 text-center"><span class="text-invest-green">Bourse</span> & Croissance d'Entreprises</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <!-- Image Bourse/Analyse Technique -->
+                    <img src="https://images.unsplash.com/photo-1590283281404-58682a220261?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         alt="Graphiques boursiers et analyse fondamentale d'entreprise." 
+                         class="rounded-2xl shadow-xl border border-invest-green/50 w-full h-auto object-cover"
+                         onerror="this.onerror=null; this.src='bourse.webp' ">
+                </div>
+
+                <!-- Texte Bourse -->
+                <div class="space-y-6" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-4">Stratégies sur les Actions</h3>
+                    
+                    <div class="border border-gray-800 rounded-lg overflow-hidden">
+                        <div class="bg-gray-900 p-4 font-bold flex items-center">
+                            <span class="bg-invest-green text-black w-6 h-6 rounded-full flex items-center justify-center mr-3 text-xs">1</span>
+                            Analyse Fondamentale
+                        </div>
+                        <div class="p-4 bg-gray-900/50 text-gray-400 text-sm">
+                            Apprenez à lire un bilan et à évaluer la santé réelle d'une entreprise (Bénéfices, Dettes, Management) avant d'acheter ses actions. C'est la base de l'investissement long terme.
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-800 rounded-lg overflow-hidden">
+                        <div class="bg-gray-900 p-4 font-bold flex items-center">
+                            <span class="bg-invest-green text-black w-6 h-6 rounded-full flex items-center justify-center mr-3 text-xs">2</span>
+                            Les ETF (Fonds indiciels)
+                        </div>
+                        <div class="p-4 bg-gray-900/50 text-gray-400 text-sm">
+                            Si vous manquez de temps, investissez dans des ETF qui répliquent un indice (comme le S&P 500 ou un indice africain). C'est la diversification maximale avec un effort minimal.
+                        </div>
+                    </div>
+                    
+                    <a href="investing.com" class="inline-block bg-purple-600 text-white font-bold py-3 px-8 rounded-full hover:bg-purple-700 transition shadow-lg shadow-purple-500/20 mt-4">
+                        Accéder aux Analyses Boursières
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SIMPLE -->
+    <footer class="bg-gray-900 py-8 border-t border-gray-800 text-center text-sm text-gray-500">
+        <a href="privacy.html">Confidentialié</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="terms.html">Conditions</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="about.html">A propos</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <p>InvestAfrica &copy; 2025. L'investissement comporte des risques de perte en capital. Faites vos propres recherches (DYOR).</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        AOS.init({ once: true }); // Initialisation AOS
+        
+        // Chart Configuration (Simple Line Chart)
+        const ctx = document.getElementById('cryptoChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Juin'],
+                datasets: [{
+                    label: 'Tendance BTC',
+                    data: [30, 45, 40, 60, 55, 75],
+                    borderColor: '#4F46E5',
+                    backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: { 
+                    x: { display: false }, 
+                    y: { display: false } 
+                }
+            }
+        });
+    </script>
+</body>
+</html>

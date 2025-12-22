@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos | InvestAfrica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'] },
+                    colors: {
+                        'invest-green': '#10B981',
+                        'market-orange': '#F59E0B',
+                        'premium-dark': '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-premium-dark text-gray-300 font-sans flex items-center justify-center min-h-screen py-12">
+
+    <div class="max-w-3xl w-full px-6">
+        <!-- Bouton Retour -->
+        <a href="invest_africa1.html" class="text-invest-green hover:text-white transition text-sm font-bold mb-8 inline-block">
+            ← Retour à l'accueil
+        </a>
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-extrabold text-white mb-4">À Propos d'<span class="text-invest-green">InvestAfrica</span></h1>
+            <div class="h-1 w-20 bg-market-orange rounded"></div>
+        </header>
+
+        <div class="space-y-6 text-lg leading-relaxed">
+            <p>
+                <strong>InvestAfrica</strong> est une plateforme spécialisée dans l'éducation financière, avec un focus majeur sur les <strong>marchés boursiers</strong> et l'écosystème des <strong>cryptomonnaies</strong>.
+            </p>
+            
+            <div class="relative my-8">
+                <img src="Trading.jpg" alt="[Image de l'analyse financière en Afrique]" class="rounded-xl border border-gray-800 shadow-2xl">
+            </div>
+
+            <p>
+                Notre mission est de démocratiser l'accès aux stratégies d'investissement complexes pour les rendre accessibles à tous les profils, du débutant à l'investisseur averti. Nous analysons quotidiennement les tendances des entreprises cotées et les cycles du Bitcoin pour vous offrir une vision claire du marché.
+            </p>
+
+            <div class="grid grid-cols-1 gap-4 mt-8">
+                <div class="p-4 bg-gray-900/50 rounded-lg border border-gray-800">
+                    <h4 class="text-white font-bold mb-1">Expertise</h4>
+                    <p class="text-sm">Analyses techniques et fondamentales rigoureuses.</p>
+                </div>
+                <div class="p-4 bg-gray-900/50 rounded-lg border border-gray-800">
+                    <h4 class="text-white font-bold mb-1">Indépendance</h4>
+                    <p class="text-sm">Un contenu neutre pour des décisions éclairées.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-16 pt-8 border-t border-gray-800 text-center text-xs text-gray-600">
+            &copy; 2025 InvestAfrica.
+        </footer>
+    </div>
+
+</body>
+</html>

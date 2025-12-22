@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestAfrica | Conseils & Stratégies Crypto Bourse</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'crypto-blue': '#4F46E5',
+                        'invest-green': '#10B981',
+                        'market-orange': '#F59E0B',
+                        'premium-dark': '#0f172a',
+                        'card-bg': 'rgba(30, 41, 59, 0.7)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, #4F46E5, #ec4899, #F59E0B); 
+        }
+        /* Masquer la scrollbar tout en gardant le défilement pour le menu mobile */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .tip-card {
+            border-left: 4px solid #F59E0B;
+            background: linear-gradient(90deg, rgba(245, 158, 11, 0.1) 0%, rgba(0,0,0,0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-premium-dark text-white overflow-x-hidden font-sans">
+
+    <!-- NAVIGATION RESPONSIVE -->
+    <nav class="fixed w-full z-50 glass-panel" id="navbar">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Header : Logo -->
+            <div class="flex items-center justify-between h-16 md:h-20 border-b border-white/5 md:border-none">
+                <a href="#hero" class="text-xl md:text-2xl font-bold tracking-tighter">
+                    Invest<span class="text-invest-green">Africa</span><span class="text-market-orange">.</span>
+                </a>
+                
+                <!-- Desktop Menu (Hidden on Mobile) -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="conseil.html" class="text-market-orange font-bold hover:text-yellow-300 transition">💡 Conseils</a>
+                    <a href="crypto.html" class="hover:text-crypto-blue transition">Crypto</a>
+                    <a href="invest.html" class="hover:text-invest-green transition">Investissement</a>
+                    <a href="bourse.html" class="hover:text-purple-400 transition">Bourse</a>
+                </div>
+            </div>
+
+            <!-- Mobile & Tablet Menu Tabs (Visible on small screens) -->
+            <!-- Cette section force l'affichage des onglets sur mobile avec un défilement horizontal si besoin -->
+            <div class="md:hidden overflow-x-auto no-scrollbar py-3 flex space-x-6 text-sm font-medium border-t border-white/5">
+                <a href="conseil.html" class="text-market-orange whitespace-nowrap">💡 Conseils</a>
+                <a href="crypto.html" class="text-gray-300 hover:text-white whitespace-nowrap">Crypto</a>
+                <a href="invest.html" class="text-gray-300 hover:text-white whitespace-nowrap">Investissement</a>
+                <a href="bourse.html" class="text-gray-300 hover:text-white whitespace-nowrap">Bourse</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-32 md:pt-40">
+        <!-- Background Effects -->
+        <div class="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[80px] md:blur-[120px] opacity-20"></div>
+        <div class="absolute bottom-0 left-0 w-64 md:w-96 h-64 md:h-96 bg-invest-green rounded-full mix-blend-multiply filter blur-[80px] md:blur-[120px] opacity-10"></div>
+
+        <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-12 relative z-10">
+            <div class="w-full md:w-1/2 text-center md:text-left" data-aos="fade-right">
+                <span class="text-invest-green font-bold tracking-wide uppercase text-xs md:text-sm mb-2 block">🎓 Expertise Finance & Marchés</span>
+                <h1 class="text-3xl md:text-6xl font-extrabold mb-6 leading-tight">
+                    Optimisez votre capital, <br>
+                    <span class="gradient-text">Devenez l'investisseur.</span>
+                </h1>
+                <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
+                    Découvrez les stratégies concrètes pour débuter et performer en <strong>Crypto</strong> et en <strong>Bourse</strong> avec un focus sur les marchés émergents.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="conseil.html" class="bg-market-orange text-black font-bold py-3 px-8 rounded-full hover:bg-yellow-400 transition shadow-lg shadow-orange-500/20">
+                        Voir les Stratégies
+                    </a>
+                    <a href="#" class="glass-panel text-white font-bold py-3 px-8 rounded-full hover:bg-white/10 transition border border-white/10">
+                        Tutoriels Vidéo
+                    </a>
+                 </div>
+            </div>
+            
+            <div class="w-full md:w-1/2" data-aos="zoom-in">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1549416556-91ce346d0a7a?q=80&w=800&auto=format&fit=crop" 
+                         alt="Marché Financier"
+                         class="w-full h-64 md:h-auto object-cover transform transition duration-500 hover:scale-105"
+                         onerror="this.onerror=null; this.src='https://placehold.co/800x600/4F46E5/ffffff?text=Investissement'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CONSEILS -->
+    <section id="conseils" class="py-16 bg-gray-900/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-market-orange">💡 Conseils de l'Expert</h2>
+                <p class="text-gray-400 text-sm md:text-base">Les règles d'or pour investir sereinement.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-card-bg p-6 rounded-xl border border-gray-700 hover:border-market-orange transition" data-aos="fade-up">
+                    <i class="fas fa-shield-alt text-3xl text-market-orange mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Gestion du Risque</h3>
+                    <p class="text-gray-400 text-sm">N'investissez jamais l'argent dont vous avez besoin pour vivre. Conservez toujours une épargne de précaution.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-card-bg p-6 rounded-xl border border-gray-700 hover:border-invest-green transition" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-layer-group text-3xl text-invest-green mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Diversification</h3>
+                    <p class="text-gray-400 text-sm">Répartissez vos fonds entre actions stables, cryptos et immobilier pour réduire l'impact des baisses.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-card-bg p-6 rounded-xl border border-gray-700 hover:border-crypto-blue transition" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-history text-3xl text-crypto-blue mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Méthode DCA</h3>
+                    <p class="text-gray-400 text-sm">Investissez de petites sommes régulièrement plutôt qu'un gros montant d'un coup pour lisser les prix.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-premium-dark py-10 border-t border-white/5 text-center text-xs text-gray-500">
+        <div class="mb-4 space-x-4">
+            <a href="#" class="hover:text-white">Mentions légales</a>
+            <a href="#" class="hover:text-white">Contact</a>
+        </div>
+        <p>InvestAfrica &copy; 2025. L'investissement comporte des risques de perte en capital.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        
+        // Navigation transparency on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.style.background = 'rgba(15, 23, 42, 0.95)';
+            } else {
+                nav.style.background = 'rgba(15, 23, 42, 0.8)';
+            }
+        });
+    </script>
+</body>
+</html>
