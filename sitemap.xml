@@ -23,7 +23,14 @@
   </url>
   <!-- Page Mentions Légales (Essentiel AdSense) -->
   <url>
-    <loc>https://nouessedo.github.io/investafrica/legal.html</loc>
+    <loc>https://nouessedo.github.io/investafrica/privacy.html</loc>
+    <lastmod>2025-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <!-- Page Conditions d'Utilisation -->
+  <url>
+    <loc>https://nouessedo.github.io/investafrica/terms.html</loc>
     <lastmod>2025-05-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
